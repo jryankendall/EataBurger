@@ -62,3 +62,6 @@ typings/
 
 # .map sass files
 *.css.map
+
+# my login details
+login.js
