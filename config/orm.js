@@ -19,18 +19,19 @@ var orm = {
     },
     insertOne: function(table, columnsArr, valuesArr, cb){
         if (columnsArr.length != valuesArr.length) {
+            console.log(columnsArr.length + " " + valuesArr.length);
             return console.log("Error in insert code. Columns array length does not match VALUES array length.");
             
         };
-        var queryString = "INSERT INTO ??(";
+        var queryString = `INSERT INTO ??(`;
         for (var i = 0; i < columnsArr.length-1; i++) {
-            queryString += "?, ";
+            queryString += `??, `;
         };
-        queryString += "?) VALUES(";
+        queryString += `??) VALUES(`;
         for (var j = 0; j < valuesArr.length-1; j++) {
-            queryString += "?, ";
+            queryString += `?, `;
         };
-        queryString += "?)";
+        queryString += `?)`;
         var inputArray = [table];
         for (var k = 0; k < columnsArr.length; k++) {
             inputArray.push(columnsArr[k]);
@@ -39,6 +40,8 @@ var orm = {
             inputArray.push(valuesArr[l]);
         };
         connection.query(queryString, inputArray, function(err, results) {
+            console.log(queryString + " " + inputArray);
+            
             if (err) throw err;
             return cb(results);
         })

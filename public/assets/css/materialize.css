@@ -8091,5 +8091,10 @@ input[type=range]::-ms-thumb {
     margin-top: 1.2rem;
   }
 }
+.burger-item {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+}
 
 /*# sourceMappingURL=materialize.css.map */

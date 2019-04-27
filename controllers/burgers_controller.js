@@ -22,11 +22,21 @@ router.get("/api/:column/:value", function(req, res) {
     });
 });
 
-router.post("/api/add", function(req, res) {
+router.post("/api/add/", function(req, res) {
     var data = req.body;
+    console.log(data);
     var columnArray = ["burger_name", "devoured"];
-    var valueArray = [data.name, data.devoured];
-    burger.insert("burgers", columnArray, valueArray, function(stuff) {
+    var valueArray = [data.name];
+    if (data.devoured == true) {
+        valueArray.push(1);
+    } else
+    {
+        valueArray.push(0);
+    }
+    console.log(columnArray);
+    console.log(valueArray);
+    
+    burger.insert(columnArray, valueArray, function(stuff) {
         console.log(stuff);
         res.json(stuff);
     });
