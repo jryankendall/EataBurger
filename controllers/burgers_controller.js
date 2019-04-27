@@ -3,11 +3,12 @@ var burger = require("../models/burger");
 
 var router = express.Router();
 
-router.get("/api/all", function(req, res) {
+router.get("/", function(req, res) {
     burger.all(function(data) {
         var handlebarObj = {
             burger: data
         };
+        console.log(handlebarObj);
         res.render("index", handlebarObj);
     });
 });
