@@ -1,5 +1,5 @@
 
-<div class="container">
+<div class="container full-grid">
     <div class="row">
         <div class="col s12">
             <h1>GOT THEM CHEESEBURGERS</h1>
@@ -9,7 +9,7 @@
         <div class="col s12 m6">
             <h2>Burgers NOT Devoured</h2>
             <div class="row">
-                <div class="col s12 grey" id="burgers-not-devoured">
+                <div class="col s12" id="burgers-not-devoured">
                     <ul>
                         {{#each burger}}
                             {{#unless devoured}}
@@ -25,7 +25,7 @@
         <div class="col s12 m6">
             <h2>Burgers Devoured!</h2>
             <div class="row">
-                <div class="col s12 blue-grey" id="burgers-is-devoured">
+                <div class="col s12" id="burgers-is-devoured">
                     <ul>
                         {{#each burger}}
                             {{#if devoured}}
@@ -43,7 +43,7 @@
     <div class="row">
         <form class="col s12">
             <div class="row">
-                <div class="input-field col s10">
+                <div class="input-field col s8 m10">
                     <input class="validate" id="burger-name-input" type="text" placeholder="Burger name">
                 </div>
                 <div class="input-field col s2">

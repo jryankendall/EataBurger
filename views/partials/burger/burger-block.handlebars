@@ -1,11 +1,11 @@
 <li class="burger-item">
-    {{burger_name}}
+    <p class="burger-p">{{burger_name}}</p>
 
     {{#unless devoured}}
         <a class="btn waves-effect waves-light devour-button" data-id="{{id}}" devour-id="{{devour}}">DEVOUR BURGER</a>
     {{/unless}}
     {{#if devoured}}
-        -Burger Eaten Already-
+        <p>-Eaten-</p>
     {{/if}}
     
 </li>
